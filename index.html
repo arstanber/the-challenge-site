@@ -6,31 +6,35 @@
   <title>The Challenge — цели с доказательством</title>
   <meta name="description" content="Ставь цели, подтверждай выполнение фото, а AI убедится, что всё по-честному. iOS-приложение для тех, кто держит слово." />
   <link rel="icon" href="assets/icon.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/dist/tabler-icons.min.css" />
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <header id="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html">
         <img src="assets/icon.png" alt="The Challenge" />
         The Challenge
       </a>
-      <nav class="nav-links">
-        <a href="#features">Возможности</a>
-        <a href="#how">Как работает</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="features.html">Возможности</a>
+        <a href="index.html#how">Как работает</a>
+        <a href="support.html">Поддержка</a>
         <a href="privacy.html">Конфиденциальность</a>
       </nav>
-      <a class="btn btn-primary btn-sm" href="#download">
-        <i class="ti ti-brand-apple"></i>
-        Скачать
-      </a>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn btn-primary btn-sm" href="#download">
+          <i class="ti ti-brand-apple"></i>
+          Скачать
+        </a>
+        <button class="menu-btn" id="menu-btn" aria-label="Меню">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -52,69 +56,132 @@
               <i class="ti ti-brand-apple"></i>
               App Store
             </a>
-            <a class="btn btn-ghost" href="#how">Как это работает</a>
+            <a class="btn btn-ghost" href="features.html">Все возможности</a>
           </div>
         </div>
 
-        <div class="hero-visual reveal-right">
-          <div class="vis-glow"></div>
-          <div class="vis-card">
-            <img src="assets/icon.png" alt="The Challenge app icon" class="vis-icon" />
-            <div class="vis-streak">
-              <span class="streak-num">47</span>
-              <span class="streak-label">дней подряд</span>
+        <div class="hero-visual reveal-r">
+          <div class="vis-orb"></div>
+
+          <div class="vis-main">
+            <div class="vis-header">
+              <img src="assets/icon.png" alt="" class="vis-app-icon" />
+              <div>
+                <span class="vis-app-name">The Challenge</span>
+                <span class="vis-app-sub">Сегодня 3 задачи</span>
+              </div>
             </div>
+            <span class="vis-streak-n">47</span>
+            <span class="vis-streak-l">дней подряд</span>
+            <div class="vis-bar-track">
+              <div class="vis-bar-fill"></div>
+            </div>
+            <div class="vis-bar-label">2 из 3 задач выполнено</div>
           </div>
-          <div class="vis-badge">
+
+          <div class="vis-ai-badge">
             <i class="ti ti-circle-check-filled"></i>
             AI проверено
           </div>
-          <div class="vis-pill">Цель выполнена!</div>
+
+          <div class="vis-task-card">
+            <img src="https://picsum.photos/seed/morning-run-fitness/40/40" class="vis-task-img" alt="" loading="lazy" />
+            <div>
+              <span class="vis-task-title">Утренняя пробежка</span>
+              <span class="vis-task-check">
+                <i class="ti ti-circle-check-filled"></i>
+                Засчитано
+              </span>
+            </div>
+          </div>
+
+          <div class="vis-pill">Стрик не сломан!</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── AI SPOTLIGHT ── -->
+    <section class="ai-spotlight">
+      <div class="wrap spotlight-inner">
+
+        <div class="spotlight-text reveal">
+          <div class="spot-tag">
+            <i class="ti ti-sparkles"></i>
+            Уникальная технология
+          </div>
+          <h2>AI, который честнее <em>вас самих</em></h2>
+          <p>Большинство трекеров принимают любые данные. The Challenge отправляет каждое фото на проверку Claude API — и засчитывает только то, что действительно выполнено.</p>
+          <a class="spot-link" href="features.html">
+            Как работает проверка
+            <i class="ti ti-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="spotlight-steps reveal-r">
+          <div class="spotlight-step">
+            <div class="s-icon"><i class="ti ti-camera"></i></div>
+            <div class="s-body">
+              <strong>Фотографируешь результат</strong>
+              <span>Снимок прямо в приложении — без сторонних галерей</span>
+            </div>
+          </div>
+          <div class="spotlight-step">
+            <div class="s-icon"><i class="ti ti-robot"></i></div>
+            <div class="s-body">
+              <strong>Claude API анализирует фото</strong>
+              <span>Модель проверяет, соответствует ли снимок описанию задачи</span>
+            </div>
+          </div>
+          <div class="spotlight-step">
+            <div class="s-icon green"><i class="ti ti-circle-check"></i></div>
+            <div class="s-body">
+              <strong>Задача засчитывается автоматически</strong>
+              <span>Стрик продолжается только при реальном доказательстве</span>
+            </div>
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- ── FEATURES BENTO ── -->
-    <section class="features" id="features">
+    <section class="features" style="padding-top: var(--sp)">
       <div class="wrap">
-        <h2 class="section-title reveal">Всё для того, чтобы держать слово</h2>
-        <p class="section-sub reveal">Простой набор инструментов, превращающий намерения в привычки.</p>
+        <div class="sec-hd reveal">
+          <h2 class="sec-title">Всё для того, чтобы держать слово</h2>
+          <p class="sec-sub">Простой набор инструментов, превращающий намерения в привычки.</p>
+        </div>
 
         <div class="bento">
-          <div class="bento-cell cell-ai reveal" style="--delay: 0s">
+          <div class="bento-cell cell-ai reveal" style="--delay:.0s">
             <div class="cell-icon"><i class="ti ti-robot"></i></div>
             <h3>Проверка AI</h3>
-            <p>Каждое фото автоматически проверяется. AI убедится, что задача действительно выполнена.</p>
+            <p>Каждое фото автоматически проверяется. AI убедится, что задача выполнена по-честному.</p>
             <div class="cell-deco"></div>
           </div>
-
-          <div class="bento-cell cell-photo reveal" style="--delay: 0.07s">
+          <div class="bento-cell cell-photo reveal" style="--delay:.06s">
             <div class="cell-icon"><i class="ti ti-camera"></i></div>
             <h3>Фотопруф</h3>
             <p>Подтверждай выполнение снимком. Никакого самообмана и пустых галочек.</p>
           </div>
-
-          <div class="bento-cell cell-streak reveal" style="--delay: 0.14s">
+          <div class="bento-cell cell-streak reveal" style="--delay:.12s">
             <div class="cell-icon"><i class="ti ti-flame"></i></div>
             <h3>Стрики</h3>
             <p>Дни без пропусков</p>
             <div class="streak-big" aria-hidden="true">47</div>
           </div>
-
-          <div class="bento-cell cell-family reveal" style="--delay: 0.21s">
+          <div class="bento-cell cell-family reveal" style="--delay:.18s">
             <div class="cell-icon"><i class="ti ti-users-group"></i></div>
             <h3>С близкими</h3>
             <p>Объединяйтесь в семьи, поддерживайте друг друга.</p>
           </div>
-
-          <div class="bento-cell cell-goals reveal" style="--delay: 0.28s">
+          <div class="bento-cell cell-goals reveal" style="--delay:.24s">
             <div class="cell-icon"><i class="ti ti-target"></i></div>
             <h3>Личные цели</h3>
             <p>Задай цель, расписание и дедлайн. Приложение выстроит план.</p>
           </div>
-
-          <div class="bento-cell cell-notif reveal" style="--delay: 0.35s">
+          <div class="bento-cell cell-notif reveal" style="--delay:.30s">
             <div class="cell-icon"><i class="ti ti-bell"></i></div>
             <h3>Напоминания</h3>
             <p>Push-уведомления вовремя напомнят о задаче. Без лишнего шума.</p>
@@ -130,24 +197,23 @@
     <!-- ── HOW IT WORKS ── -->
     <section class="how" id="how">
       <div class="wrap">
-        <h2 class="section-title reveal">Три шага к привычке</h2>
-
+        <div class="sec-hd reveal">
+          <h2 class="sec-title">Три шага к привычке</h2>
+          <p class="sec-sub">От первой цели до уверенной привычки.</p>
+        </div>
         <div class="steps-track">
           <div class="steps-line" aria-hidden="true"></div>
-
-          <div class="step reveal" style="--delay: 0s">
+          <div class="step reveal" style="--delay:.0s">
             <div class="step-num">1</div>
             <h3>Создай цель</h3>
-            <p>Опиши, что хочешь делать и как часто. Приложение само построит график.</p>
+            <p>Опиши задачу и выбери расписание. Приложение само выстроит план.</p>
           </div>
-
-          <div class="step reveal" style="--delay: 0.1s">
+          <div class="step reveal" style="--delay:.1s">
             <div class="step-num">2</div>
             <h3>Сделай фото</h3>
             <p>Когда выполнил задачу, сфотографируй результат прямо в приложении.</p>
           </div>
-
-          <div class="step reveal" style="--delay: 0.2s">
+          <div class="step reveal" style="--delay:.2s">
             <div class="step-num">3</div>
             <h3>Получи подтверждение</h3>
             <p>AI проверит фото, засчитает день и продлит стрик.</p>
@@ -158,29 +224,60 @@
 
     <!-- ── CTA BAND ── -->
     <section class="cta-band" id="download">
-      <div class="wrap cta-inner reveal">
+      <div class="wrap reveal">
         <h2>Готов начать?</h2>
         <p>Скачай The Challenge и сделай первый шаг сегодня.</p>
-        <a class="btn btn-white" href="https://apps.apple.com/" target="_blank" rel="noopener">
-          <i class="ti ti-brand-apple"></i>
-          Скачать в App Store
-        </a>
+        <div class="cta-btns">
+          <a class="btn btn-white" href="https://apps.apple.com/" target="_blank" rel="noopener">
+            <i class="ti ti-brand-apple"></i>
+            Скачать в App Store
+          </a>
+          <a class="btn btn-outline-white" href="features.html">
+            Все возможности
+          </a>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <div class="wrap footer-row">
-      <a class="brand brand-sm" href="#top">
-        <img src="assets/icon.png" alt="The Challenge" />
-        The Challenge
-      </a>
-      <span class="footer-copy">&copy; 2026 The Challenge</span>
-      <nav class="footer-nav">
-        <a href="privacy.html">Конфиденциальность</a>
-        <a href="mailto:berdongar@gmail.com">Связаться</a>
-      </nav>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/icon.png" alt="The Challenge" />
+            The Challenge
+          </a>
+          <p>iOS-приложение для целей с фотопруфом и AI-верификацией.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Приложение</h4>
+          <ul>
+            <li><a href="features.html">Возможности</a></li>
+            <li><a href="index.html#how">Как работает</a></li>
+            <li><a href="#download">Скачать</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Поддержка</h4>
+          <ul>
+            <li><a href="support.html">Помощь и FAQ</a></li>
+            <li><a href="mailto:berdongar@gmail.com">Написать нам</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Правовое</h4>
+          <ul>
+            <li><a href="privacy.html">Конфиденциальность</a></li>
+            <li><a href="terms.html">Условия использования</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Challenge. Все права защищены.</span>
+        <a href="mailto:berdongar@gmail.com">berdongar@gmail.com</a>
+      </div>
     </div>
   </footer>
 

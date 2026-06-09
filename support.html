@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Поддержка — The Challenge</title>
+  <meta name="description" content="Ответы на часто задаваемые вопросы об использовании The Challenge. Если не нашли ответ — пишите нам." />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="assets/icon.png" alt="The Challenge" />
+        The Challenge
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="features.html">Возможности</a>
+        <a href="index.html#how">Как работает</a>
+        <a href="support.html" class="active">Поддержка</a>
+        <a href="privacy.html">Конфиденциальность</a>
+      </nav>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn btn-primary btn-sm" href="index.html#download">
+          <i class="ti ti-brand-apple"></i>
+          Скачать
+        </a>
+        <button class="menu-btn" id="menu-btn" aria-label="Меню">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <div class="page-hero">
+      <div class="wrap reveal">
+        <div class="page-hero-tag"><i class="ti ti-help-circle"></i> Поддержка</div>
+        <h1>Как мы можем помочь?</h1>
+        <p>Ответы на частые вопросы — ниже. Если не нашли нужного, напишите нам напрямую.</p>
+      </div>
+    </div>
+
+    <!-- ── FAQ + CONTACT ── -->
+    <section>
+      <div class="wrap support-layout">
+
+        <!-- FAQ -->
+        <div>
+          <div class="faq-list" id="faq-ai">
+
+            <details class="faq-item">
+              <summary>
+                Как работает проверка AI?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                После того как вы делаете фото, оно передаётся в Claude API от Anthropic. Модель анализирует содержимое снимка и сравнивает его с описанием задачи. Если фото соответствует — задача засчитывается автоматически. Весь процесс занимает несколько секунд.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Что делать, если AI не засчитал выполненную задачу?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                AI анализирует фото на основе описания задачи. Если задача не засчитана — попробуйте сделать более чёткое фото с хорошим освещением, которое явно показывает выполнение. Убедитесь, что описание задачи достаточно конкретно описывает ожидаемый результат. Если проблема повторяется — напишите нам.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Можно ли добавить несколько целей?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Да, количество целей не ограничено. Вы можете создавать столько задач, сколько нужно, с разным расписанием и критериями выполнения.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Как создать семейную группу?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Перейдите в раздел «Семья» в приложении и нажмите «Создать группу». После создания вы получите ссылку-приглашение, которую можно отправить близким. Участники группы увидят прогресс друг друга в общей ленте.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Почему прервался мой стрик?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Стрик обнуляется, если задача не выполнена до конца дня по вашему часовому поясу. Если вы пропустили день по уважительной причине, напишите нам — рассмотрим индивидуально.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Мои фотографии в безопасности?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Фотографии передаются в Claude API только для проверки задачи и нигде больше не используются. Мы не продаём данные третьим лицам. Подробнее — в нашей <a href="privacy.html">Политике конфиденциальности</a>.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Приложение работает без интернета?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Просматривать цели и историю можно без интернета. Но для проверки фото через AI необходимо подключение к сети — AI-верификация работает через облачный API.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Как удалить аккаунт?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Перейдите в «Настройки» в приложении, затем «Аккаунт» и нажмите «Удалить аккаунт». Все ваши данные, цели и фотографии будут удалены без возможности восстановления. Если у вас возникли трудности — напишите на <a href="mailto:berdongar@gmail.com">berdongar@gmail.com</a>.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                На каких устройствах работает приложение?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                The Challenge доступен для iPhone с iOS 16 и новее. Android-версия в настоящее время не планируется.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>
+                Приложение платное?
+                <i class="ti ti-plus faq-toggle"></i>
+              </summary>
+              <div class="faq-ans">
+                Базовые функции приложения бесплатны. Информацию о дополнительных возможностях смотрите в App Store.
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- Contact sidebar -->
+        <div class="contact-aside">
+          <div class="contact-card reveal">
+            <h3>Не нашли ответ?</h3>
+            <p>Напишите нам напрямую. Мы отвечаем в течение 24 часов в будние дни.</p>
+            <a class="contact-link" href="mailto:berdongar@gmail.com">
+              <i class="ti ti-mail"></i>
+              berdongar@gmail.com
+            </a>
+            <div class="contact-note">Обычно отвечаем быстрее</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/icon.png" alt="The Challenge" />
+            The Challenge
+          </a>
+          <p>iOS-приложение для целей с фотопруфом и AI-верификацией.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Приложение</h4>
+          <ul>
+            <li><a href="features.html">Возможности</a></li>
+            <li><a href="index.html#how">Как работает</a></li>
+            <li><a href="index.html#download">Скачать</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Поддержка</h4>
+          <ul>
+            <li><a href="support.html">Помощь и FAQ</a></li>
+            <li><a href="mailto:berdongar@gmail.com">Написать нам</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Правовое</h4>
+          <ul>
+            <li><a href="privacy.html">Конфиденциальность</a></li>
+            <li><a href="terms.html">Условия использования</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Challenge. Все права защищены.</span>
+        <a href="mailto:berdongar@gmail.com">berdongar@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

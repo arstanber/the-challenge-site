@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Возможности — The Challenge</title>
+  <meta name="description" content="AI-верификация, фотопруф, стрики, семейные группы и напоминания. Всё, что нужно для настоящих привычек." />
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header id="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html">
+        <img src="assets/icon.png" alt="The Challenge" />
+        The Challenge
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="features.html" class="active">Возможности</a>
+        <a href="index.html#how">Как работает</a>
+        <a href="support.html">Поддержка</a>
+        <a href="privacy.html">Конфиденциальность</a>
+      </nav>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn btn-primary btn-sm" href="index.html#download">
+          <i class="ti ti-brand-apple"></i>
+          Скачать
+        </a>
+        <button class="menu-btn" id="menu-btn" aria-label="Меню">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <div class="page-hero">
+      <div class="wrap reveal">
+        <div class="page-hero-tag"><i class="ti ti-sparkles"></i> Возможности</div>
+        <h1>Инструменты для тех,<br>кто держит слово</h1>
+        <p>Каждая функция создана с одной целью — помочь вам дойти до результата, а не просто отметить галочку.</p>
+      </div>
+    </div>
+
+    <!-- ── ROW 1: Личные цели — text left, image right ── -->
+    <section class="feat-row">
+      <div class="wrap feat-inner reveal">
+        <div class="feat-text">
+          <div class="feat-tag"><i class="ti ti-target"></i> Личные цели</div>
+          <h2>Цели, которые действительно работают</h2>
+          <p>Создавай задачи с понятным расписанием: каждый день, по будням, раз в неделю. Приложение выстроит план и напомнит в нужное время.</p>
+          <ul class="feat-bullets">
+            <li><i class="ti ti-check"></i> Гибкое расписание под ваш ритм</li>
+            <li><i class="ti ti-check"></i> Описание критериев выполнения</li>
+            <li><i class="ti ti-check"></i> Приоритеты и дедлайны</li>
+            <li><i class="ti ti-check"></i> История всех попыток</li>
+          </ul>
+        </div>
+        <div class="feat-visual">
+          <div class="feat-img">
+            <img src="https://picsum.photos/seed/goal-planning-notebook/520/340" alt="Постановка целей" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROW 2: Фотопруф — image left, text right ── -->
+    <section class="feat-row">
+      <div class="wrap feat-inner rev reveal">
+        <div class="feat-text">
+          <div class="feat-tag"><i class="ti ti-camera"></i> Фотопруф</div>
+          <h2>Никакого самообмана</h2>
+          <p>Подтверждай каждое выполнение снимком прямо в приложении. Фото хранится в истории задачи — ты всегда можешь вернуться и посмотреть, как рос прогресс.</p>
+          <ul class="feat-bullets">
+            <li><i class="ti ti-check"></i> Съёмка прямо из приложения</li>
+            <li><i class="ti ti-check"></i> История фотоотчётов</li>
+            <li><i class="ti ti-check"></i> Мгновенная отправка на проверку AI</li>
+          </ul>
+        </div>
+        <div class="feat-visual">
+          <div class="feat-img">
+            <img src="https://picsum.photos/seed/smartphone-photo-proof/520/340" alt="Фотопруф" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROW 3 (BREAK): AI-верификация — full-width dark ── -->
+    <section class="ai-spotlight" style="margin-bottom:0">
+      <div class="wrap spotlight-inner">
+        <div class="spotlight-text reveal">
+          <div class="spot-tag"><i class="ti ti-robot"></i> AI-верификация</div>
+          <h2>Claude API видит сквозь <em>отговорки</em></h2>
+          <p>Мы используем Claude API от Anthropic. Модель анализирует содержимое фото и проверяет, соответствует ли снимок описанию задачи. Никакой ручной проверки — всё автоматически за секунды.</p>
+          <a class="spot-link" href="support.html#faq-ai">
+            Часто задаваемые вопросы про AI
+            <i class="ti ti-arrow-right"></i>
+          </a>
+        </div>
+        <div class="feat-visual reveal-r">
+          <div class="ai-verify-vis">
+            <div class="vf-step">
+              <div class="vf-icon"><i class="ti ti-photo"></i></div>
+              <div class="vf-body">
+                <strong>Фото загружено</strong>
+                <span>Снимок передан на анализ</span>
+              </div>
+            </div>
+            <div class="vf-step">
+              <div class="vf-icon"><i class="ti ti-robot"></i></div>
+              <div class="vf-body">
+                <strong>Claude API анализирует</strong>
+                <span>Сравниваем содержимое с описанием задачи</span>
+              </div>
+            </div>
+            <div class="vf-step">
+              <div class="vf-icon done"><i class="ti ti-circle-check"></i></div>
+              <div class="vf-body">
+                <strong>Задача засчитана</strong>
+                <span>Стрик продолжается, прогресс обновлён</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROW 4: Стрики — text left, CSS visual right ── -->
+    <section class="feat-row">
+      <div class="wrap feat-inner reveal">
+        <div class="feat-text">
+          <div class="feat-tag"><i class="ti ti-flame"></i> Стрики</div>
+          <h2>Мотивация, которая видна в цифрах</h2>
+          <p>Каждый день без пропуска добавляется к стрику. Чем длиннее цепочка — тем сильнее желание её не прервать. Это простая, но работающая механика.</p>
+          <ul class="feat-bullets">
+            <li><i class="ti ti-check"></i> Счётчик дней подряд</li>
+            <li><i class="ti ti-check"></i> Визуальный календарь-карта прогресса</li>
+            <li><i class="ti ti-check"></i> Уведомление если стрик под угрозой</li>
+          </ul>
+        </div>
+        <div class="feat-visual">
+          <div class="streak-card-vis">
+            <div class="s-num">47</div>
+            <div class="s-lbl">дней подряд</div>
+            <!-- 4 недели × 7 дней = 28 точек, все заполнены -->
+            <div class="streak-dots">
+              <div class="sd dim"></div><div class="sd dim"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div>
+              <div class="sd"></div><div class="sd"></div><div class="sd"></div><div class="sd today"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROW 5: Семья — image left, text right ── -->
+    <section class="feat-row">
+      <div class="wrap feat-inner rev reveal">
+        <div class="feat-text">
+          <div class="feat-tag"><i class="ti ti-users-group"></i> Семейные группы</div>
+          <h2>Вместе идти проще</h2>
+          <p>Создавай группы с близкими, друзьями или командой. Следите за прогрессом друг друга, поддерживайте и держите взаимную ответственность.</p>
+          <ul class="feat-bullets">
+            <li><i class="ti ti-check"></i> Создание семьи одной ссылкой</li>
+            <li><i class="ti ti-check"></i> Общая лента прогресса</li>
+            <li><i class="ti ti-check"></i> Видно, кто выполнил задачу сегодня</li>
+          </ul>
+        </div>
+        <div class="feat-visual">
+          <div class="family-vis">
+            <div class="fam-member">
+              <div class="fam-avatar">А</div>
+              <div>
+                <div class="fam-name">Арслан</div>
+                <div class="fam-days">47 дней подряд</div>
+              </div>
+              <div class="fam-badge done">Готово</div>
+            </div>
+            <div class="fam-member">
+              <div class="fam-avatar" style="background:#7c3aed">М</div>
+              <div>
+                <div class="fam-name">Мария</div>
+                <div class="fam-days">23 дня подряд</div>
+              </div>
+              <div class="fam-badge done">Готово</div>
+            </div>
+            <div class="fam-member">
+              <div class="fam-avatar" style="background:#ea580c">Д</div>
+              <div>
+                <div class="fam-name">Дима</div>
+                <div class="fam-days">12 дней подряд</div>
+              </div>
+              <div class="fam-badge">Ожидается</div>
+            </div>
+            <div class="fam-member">
+              <div class="fam-avatar" style="background:#059669">С</div>
+              <div>
+                <div class="fam-name">Саша</div>
+                <div class="fam-days">8 дней подряд</div>
+              </div>
+              <div class="fam-badge done">Готово</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ROW 6 (BREAK): Напоминания — CSS visual, different layout ── -->
+    <section class="feat-row">
+      <div class="wrap feat-inner reveal">
+        <div class="feat-text">
+          <div class="feat-tag"><i class="ti ti-bell"></i> Напоминания</div>
+          <h2>В нужный момент, без лишнего шума</h2>
+          <p>Push-уведомления настраиваются для каждой задачи отдельно. Приложение напомнит именно тогда, когда вы обычно готовы к выполнению — не раньше и не позже.</p>
+          <ul class="feat-bullets">
+            <li><i class="ti ti-check"></i> Время уведомления под каждую цель</li>
+            <li><i class="ti ti-check"></i> Предупреждение если стрик под угрозой</li>
+            <li><i class="ti ti-check"></i> Тихий режим и паузы</li>
+          </ul>
+        </div>
+        <div class="feat-visual">
+          <div class="notif-vis">
+            <div class="notif-bubble">
+              <div class="nb-icon"><i class="ti ti-bell-ringing"></i></div>
+              <div style="flex:1">
+                <div class="nb-title">Время для «Утренней пробежки»</div>
+                <div class="nb-body">Нажмите, чтобы отметить выполнение</div>
+              </div>
+              <div class="nb-time">07:00</div>
+            </div>
+            <div class="notif-bubble">
+              <div class="nb-icon" style="background:#ea580c"><i class="ti ti-flame"></i></div>
+              <div style="flex:1">
+                <div class="nb-title">Стрик под угрозой!</div>
+                <div class="nb-body">До конца дня осталось 3 часа</div>
+              </div>
+              <div class="nb-time">21:00</div>
+            </div>
+            <div class="notif-bubble">
+              <div class="nb-icon" style="background:#059669"><i class="ti ti-circle-check"></i></div>
+              <div style="flex:1">
+                <div class="nb-title">Мария выполнила цель</div>
+                <div class="nb-body">«Медитация 10 минут» — засчитано</div>
+              </div>
+              <div class="nb-time">08:34</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SECONDARY FEATURES GRID ── -->
+    <section class="feats-soft">
+      <div class="wrap">
+        <div class="sec-hd center reveal">
+          <h2 class="sec-title">И ещё много полезного</h2>
+          <p class="sec-sub">Детали, которые делают пользование приятным каждый день.</p>
+        </div>
+        <div class="feat-cards">
+          <div class="feat-card reveal" style="--delay:.0s">
+            <div class="fc-icon"><i class="ti ti-calendar"></i></div>
+            <h3>Гибкое расписание</h3>
+            <p>Каждый день, по будням, раз в неделю или своё расписание.</p>
+          </div>
+          <div class="feat-card reveal" style="--delay:.06s">
+            <div class="fc-icon"><i class="ti ti-chart-bar"></i></div>
+            <h3>Статистика</h3>
+            <p>Графики выполнения, лучшие серии и сравнение по неделям.</p>
+          </div>
+          <div class="feat-card reveal" style="--delay:.12s">
+            <div class="fc-icon"><i class="ti ti-history"></i></div>
+            <h3>История задач</h3>
+            <p>Все фотоотчёты и результаты хранятся в хронологии каждой цели.</p>
+          </div>
+          <div class="feat-card reveal" style="--delay:.18s">
+            <div class="fc-icon"><i class="ti ti-shield-check"></i></div>
+            <h3>Конфиденциальность</h3>
+            <p>Данные хранятся только на вашем аккаунте. Мы не продаём информацию.</p>
+          </div>
+          <div class="feat-card reveal" style="--delay:.24s">
+            <div class="fc-icon"><i class="ti ti-moon"></i></div>
+            <h3>Тёмная тема</h3>
+            <p>Автоматически подстраивается под системные настройки iOS.</p>
+          </div>
+          <div class="feat-card reveal" style="--delay:.30s">
+            <div class="fc-icon"><i class="ti ti-brand-apple"></i></div>
+            <h3>Нативный iOS</h3>
+            <p>Приложение написано на Swift и работает быстро на всех устройствах Apple.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA BAND ── -->
+    <section class="cta-band">
+      <div class="wrap reveal">
+        <h2>Готов начать?</h2>
+        <p>Скачай The Challenge и сделай первый шаг сегодня.</p>
+        <div class="cta-btns">
+          <a class="btn btn-white" href="https://apps.apple.com/" target="_blank" rel="noopener">
+            <i class="ti ti-brand-apple"></i>
+            Скачать в App Store
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/icon.png" alt="The Challenge" />
+            The Challenge
+          </a>
+          <p>iOS-приложение для целей с фотопруфом и AI-верификацией.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Приложение</h4>
+          <ul>
+            <li><a href="features.html">Возможности</a></li>
+            <li><a href="index.html#how">Как работает</a></li>
+            <li><a href="index.html#download">Скачать</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Поддержка</h4>
+          <ul>
+            <li><a href="support.html">Помощь и FAQ</a></li>
+            <li><a href="mailto:berdongar@gmail.com">Написать нам</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Правовое</h4>
+          <ul>
+            <li><a href="privacy.html">Конфиденциальность</a></li>
+            <li><a href="terms.html">Условия использования</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Challenge. Все права защищены.</span>
+        <a href="mailto:berdongar@gmail.com">berdongar@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -12,25 +12,42 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header id="site-header">
     <div class="wrap nav">
       <a class="brand" href="index.html">
         <img src="assets/icon.png" alt="The Challenge" />
         The Challenge
       </a>
-      <nav class="nav-links">
-        <a href="index.html#features">Возможности</a>
-        <a href="index.html#how">Как это работает</a>
-        <a href="privacy.html">Конфиденциальность</a>
+      <nav class="nav-links" id="nav-links">
+        <a href="features.html">Возможности</a>
+        <a href="index.html#how">Как работает</a>
+        <a href="support.html">Поддержка</a>
+        <a href="privacy.html" class="active">Конфиденциальность</a>
       </nav>
-      <a class="btn btn-primary" href="index.html#download">Скачать</a>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="btn btn-primary btn-sm" href="index.html#download">
+          <i class="ti ti-brand-apple"></i>
+          Скачать
+        </a>
+        <button class="menu-btn" id="menu-btn" aria-label="Меню">
+          <i class="ti ti-menu-2"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
+    <div class="page-hero">
+      <div class="wrap">
+        <div class="page-hero-tag"><i class="ti ti-shield-check"></i> Правовое</div>
+        <h1>Политика конфиденциальности</h1>
+        <p>Мы серьёзно относимся к защите ваших данных. Здесь описано, что мы собираем и как используем.</p>
+      </div>
+    </div>
+
     <section class="legal">
       <div class="wrap">
-        <h1>Политика конфиденциальности</h1>
         <p class="updated">Последнее обновление: 9 июня 2026 г.</p>
 
         <p>Эта политика описывает, какие данные собирает приложение The Challenge («приложение», «мы») и как мы их используем. Используя приложение, вы соглашаетесь с условиями, описанными ниже.</p>
@@ -77,13 +94,45 @@
   </main>
 
   <footer>
-    <div class="wrap footer-row">
-      <span>&copy; 2026 The Challenge</span>
-      <nav>
-        <a href="privacy.html">Политика конфиденциальности</a>
-        <a href="mailto:berdongar@gmail.com">Связаться</a>
-      </nav>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/icon.png" alt="The Challenge" />
+            The Challenge
+          </a>
+          <p>iOS-приложение для целей с фотопруфом и AI-верификацией.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Приложение</h4>
+          <ul>
+            <li><a href="features.html">Возможности</a></li>
+            <li><a href="index.html#how">Как работает</a></li>
+            <li><a href="index.html#download">Скачать</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Поддержка</h4>
+          <ul>
+            <li><a href="support.html">Помощь и FAQ</a></li>
+            <li><a href="mailto:berdongar@gmail.com">Написать нам</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Правовое</h4>
+          <ul>
+            <li><a href="privacy.html">Конфиденциальность</a></li>
+            <li><a href="terms.html">Условия использования</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Challenge. Все права защищены.</span>
+        <a href="mailto:berdongar@gmail.com">berdongar@gmail.com</a>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div id="cursor-glow" aria-hidden="true"></div>
   <div id="scroll-progress"></div>
 
   <!-- ── HEADER ── -->
@@ -43,12 +44,13 @@
 
     <!-- ── HERO ── -->
     <section class="hero">
+      <canvas id="hero-particles" aria-hidden="true"></canvas>
       <div class="hero-wrap">
         <div class="hero-badge reveal">
           <span class="badge-new">Новинка</span>
           Честный трекер привычек с AI
         </div>
-        <h1 class="reveal">Строй привычки, которые<br>действительно работают</h1>
+        <h1 class="reveal" data-split>Строй привычки, которые<br>действительно работают</h1>
         <p class="hero-sub reveal">Видишь нужные привычки в нужное время, чтобы день никогда не казался перегруженным.</p>
         <div class="hero-ctas reveal">
           <a class="btn btn-white-solid" href="https://apps.apple.com/" target="_blank" rel="noopener">Начать бесплатно</a>
@@ -80,6 +82,50 @@
       </div>
       <div class="hero-fade"></div>
     </section>
+
+    <!-- ── HABIT TICKER ── -->
+    <div class="ticker-sec" aria-hidden="true">
+      <div class="ticker-row">
+        <div class="ticker-track">
+          <span class="tick-item"><i class="ti ti-walk"></i>Утренняя прогулка</span>
+          <span class="tick-item"><i class="ti ti-droplet"></i>Пить воду</span>
+          <span class="tick-item"><i class="ti ti-book"></i>Читать книгу</span>
+          <span class="tick-item"><i class="ti ti-barbell"></i>Тренировка</span>
+          <span class="tick-item"><i class="ti ti-brain"></i>Медитация</span>
+          <span class="tick-item"><i class="ti ti-run"></i>Пробежка</span>
+          <span class="tick-item"><i class="ti ti-salad"></i>Здоровое питание</span>
+          <span class="tick-item"><i class="ti ti-notebook"></i>Дневник</span>
+          <span class="tick-item"><i class="ti ti-walk"></i>Утренняя прогулка</span>
+          <span class="tick-item"><i class="ti ti-droplet"></i>Пить воду</span>
+          <span class="tick-item"><i class="ti ti-book"></i>Читать книгу</span>
+          <span class="tick-item"><i class="ti ti-barbell"></i>Тренировка</span>
+          <span class="tick-item"><i class="ti ti-brain"></i>Медитация</span>
+          <span class="tick-item"><i class="ti ti-run"></i>Пробежка</span>
+          <span class="tick-item"><i class="ti ti-salad"></i>Здоровое питание</span>
+          <span class="tick-item"><i class="ti ti-notebook"></i>Дневник</span>
+        </div>
+      </div>
+      <div class="ticker-row rev">
+        <div class="ticker-track">
+          <span class="tick-item"><i class="ti ti-yoga"></i>Йога</span>
+          <span class="tick-item"><i class="ti ti-snowflake"></i>Холодный душ</span>
+          <span class="tick-item"><i class="ti ti-clock"></i>Фокус 90 мин</span>
+          <span class="tick-item"><i class="ti ti-stretching"></i>Растяжка</span>
+          <span class="tick-item"><i class="ti ti-device-mobile-off"></i>Без телефона</span>
+          <span class="tick-item"><i class="ti ti-list-check"></i>Планирование дня</span>
+          <span class="tick-item"><i class="ti ti-tree"></i>Прогулка на природе</span>
+          <span class="tick-item"><i class="ti ti-sunrise"></i>Ранний подъём</span>
+          <span class="tick-item"><i class="ti ti-yoga"></i>Йога</span>
+          <span class="tick-item"><i class="ti ti-snowflake"></i>Холодный душ</span>
+          <span class="tick-item"><i class="ti ti-clock"></i>Фокус 90 мин</span>
+          <span class="tick-item"><i class="ti ti-stretching"></i>Растяжка</span>
+          <span class="tick-item"><i class="ti ti-device-mobile-off"></i>Без телефона</span>
+          <span class="tick-item"><i class="ti ti-list-check"></i>Планирование дня</span>
+          <span class="tick-item"><i class="ti ti-tree"></i>Прогулка на природе</span>
+          <span class="tick-item"><i class="ti ti-sunrise"></i>Ранний подъём</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ── FEATURES / ABOUT ── -->
     <section class="feat-about" id="features">

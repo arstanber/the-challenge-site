@@ -254,3 +254,120 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('scroll', update, { passive: true });
   update();
 })();
+
+/* ── 13. CURSOR GLOW ── */
+(function () {
+  const glow = document.getElementById('cursor-glow');
+  if (!glow) return;
+  let mx = -9999, my = -9999, cx = -9999, cy = -9999, raf;
+  window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; }, { passive: true });
+  (function tick() {
+    cx += (mx - cx) * 0.09;
+    cy += (my - cy) * 0.09;
+    glow.style.left = cx + 'px';
+    glow.style.top  = cy + 'px';
+    raf = requestAnimationFrame(tick);
+  })();
+  document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { glow.style.opacity = '1'; });
+})();
+
+/* ── 14. HERO CANVAS PARTICLES ── */
+(function () {
+  const canvas = document.getElementById('hero-particles');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const ctx = canvas.getContext('2d');
+  const COUNT = 55;
+  let W, H, dots;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  new ResizeObserver(resize).observe(canvas);
+
+  function mkDot() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: 0.8 + Math.random() * 1.4,
+      vx: (Math.random() - 0.5) * 0.28,
+      vy: (Math.random() - 0.5) * 0.28,
+      a: 0.15 + Math.random() * 0.5
+    };
+  }
+  dots = Array.from({ length: COUNT }, mkDot);
+
+  (function frame() {
+    ctx.clearRect(0, 0, W, H);
+    for (const d of dots) {
+      d.x += d.vx; d.y += d.vy;
+      if (d.x < 0) d.x = W; if (d.x > W) d.x = 0;
+      if (d.y < 0) d.y = H; if (d.y > H) d.y = 0;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${d.a})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  })();
+})();
+
+/* ── 15. SPLIT TEXT H1 ── */
+(function () {
+  const h1 = document.querySelector('.hero h1[data-split]');
+  if (!h1) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function splitEl(el) {
+    const html = el.innerHTML;
+    const parts = html.split(/(<br\s*\/?>)/i);
+    let wi = 0;
+    return parts.map(part => {
+      if (/^<br/i.test(part)) return '<br>';
+      return part.trim().split(/\s+/).filter(Boolean).map(word => {
+        const span = `<span class="word-wrap"><span class="word" style="--wi:${wi}">${word}</span></span>`;
+        wi++;
+        return span;
+      }).join(' ');
+    }).join('');
+  }
+
+  h1.innerHTML = splitEl(h1);
+  h1.classList.add('split-ready');
+})();
+
+/* ── 16. MAGNETIC BUTTONS ── */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.hero-ctas .btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r  = btn.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width  / 2)) * 0.22;
+      const dy = (e.clientY - (r.top  + r.height / 2)) * 0.22;
+      btn.style.transform = `translate(${dx}px, ${dy}px) scale(1.04)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+})();
+
+/* ── 17. ACTIVE NAV HIGHLIGHT ── */
+(function () {
+  const links = document.querySelectorAll('.nav-pills a[href^="#"]');
+  if (!links.length) return;
+  const ids = Array.from(links).map(a => a.getAttribute('href').slice(1));
+  const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      links.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.nav-pills a[href="#${entry.target.id}"]`);
+      if (link) link.classList.add('active');
+    });
+  }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
+  sections.forEach(s => obs.observe(s));
+})();

@@ -259,8 +259,11 @@ ul { list-style: none; }
   content: '';
   position: absolute; inset: 0; pointer-events: none;
   background:
-    radial-gradient(ellipse 55% 65% at 22% 55%, rgba(100,45,18,.5), transparent 60%),
-    radial-gradient(ellipse 40% 50% at 72% 40%, rgba(60,28,12,.3), transparent 60%);
+    radial-gradient(ellipse 26% 52% at 16% 42%, rgba(210,95,18,.65), transparent 55%),
+    radial-gradient(ellipse 16% 28% at 19% 26%, rgba(170,75,14,.45), transparent 48%),
+    radial-gradient(ellipse 40% 46% at 14% 60%, rgba(130,54,10,.38), transparent 55%),
+    radial-gradient(ellipse 38% 42% at 74% 35%, rgba(50,22,8,.22), transparent 55%);
+  animation: heroAmbient 9s ease-in-out infinite;
 }
 .hero::after {
   content: '';
@@ -361,6 +364,17 @@ ul { list-style: none; }
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-10px); }
 }
+@keyframes heroAmbient {
+  0%,100% { transform: scale(1) translate(0,0); }
+  40%      { transform: scale(1.06) translate(-8px, -4px); }
+  70%      { transform: scale(1.03) translate(4px, 6px); }
+}
+@keyframes wordIn {
+  from { opacity: 0; transform: translateY(110%); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes tickFwd { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes tickRev { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 @keyframes badgePulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(255,76,0,.45); }
   50%       { box-shadow: 0 0 0 9px rgba(255,76,0,0); }
@@ -1223,6 +1237,85 @@ footer { background: var(--bg-light); }
   pointer-events: none;
   transition: width 0.06s linear;
 }
+
+/* ── Cursor glow ── */
+#cursor-glow {
+  position: fixed; pointer-events: none; z-index: 9999;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,76,0,.12) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity .4s;
+  opacity: 0;
+  will-change: left, top;
+}
+body:hover #cursor-glow { opacity: 1; }
+
+/* ── Hero canvas particles ── */
+#hero-particles {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+}
+
+/* ── Split-text word animation ── */
+.word-wrap {
+  display: inline-block; overflow: hidden;
+  vertical-align: bottom; line-height: inherit;
+}
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(110%);
+  animation: wordIn .75s var(--ease-out) forwards;
+  animation-delay: calc(var(--wi, 0) * 90ms + 0.1s);
+}
+.hero h1.split-ready .word { animation-play-state: running; }
+
+/* ── Ticker section ── */
+.ticker-sec {
+  overflow: hidden;
+  padding: 28px 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray-soft);
+  border-bottom: 1px solid var(--gray-soft);
+}
+.ticker-row { overflow: hidden; }
+.ticker-row + .ticker-row { margin-top: 8px; }
+.ticker-track {
+  display: flex; gap: 12px; width: max-content;
+  animation: tickFwd 30s linear infinite;
+}
+.ticker-row.rev .ticker-track { animation-name: tickRev; }
+.tick-item {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 18px; border-radius: 100px;
+  background: var(--bg-light);
+  font-size: 14px; font-weight: 500; color: var(--charcoal);
+  white-space: nowrap;
+}
+.tick-item i { font-size: 15px; color: var(--orange); }
+
+/* ── SS-card portrait ambient overlay ── */
+.ss-card { position: relative; overflow: hidden; }
+.ss-card::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(19,21,21,.72) 100%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.ss-card:hover::after { opacity: 1; }
+
+/* ── Magnetic button indicator ── */
+.btn { position: relative; overflow: hidden; }
+.btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,.08);
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn:hover::before { opacity: 1; }
 
 /* ============================================================
    RESPONSIVE

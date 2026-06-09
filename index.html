@@ -4,12 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Challenge — цели с доказательством</title>
-  <meta name="description" content="The Challenge — приложение для целей с фотопруфом и проверкой через AI. Ставь задачи, фотографируй результат, держи стрик." />
+  <meta name="description" content="Ставь цели, подтверждай выполнение фото, а AI убедится, что всё по-честному. iOS-приложение для тех, кто держит слово." />
   <link rel="icon" href="assets/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/dist/tabler-icons.min.css" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
+
+  <header id="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top">
         <img src="assets/icon.png" alt="The Challenge" />
@@ -17,106 +24,166 @@
       </a>
       <nav class="nav-links">
         <a href="#features">Возможности</a>
-        <a href="#how">Как это работает</a>
+        <a href="#how">Как работает</a>
         <a href="privacy.html">Конфиденциальность</a>
       </nav>
-      <a class="btn btn-primary" href="#download">Скачать</a>
+      <a class="btn btn-primary btn-sm" href="#download">
+        <i class="ti ti-brand-apple"></i>
+        Скачать
+      </a>
     </div>
   </header>
 
   <main>
+
+    <!-- ── HERO ── -->
     <section class="hero" id="top">
-      <div class="wrap">
-        <img class="logo" src="assets/icon.png" alt="The Challenge logo" />
-        <h1>Ставь цели. <span>Доказывай</span> делом.</h1>
-        <p>The Challenge помогает превращать намерения в привычки: создавай задачи, подтверждай выполнение фото — а AI проверит, что всё по-честному.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#download">Скачать в App Store</a>
-          <a class="btn btn-secondary" href="#how">Как это работает</a>
+      <div class="wrap hero-inner">
+
+        <div class="hero-text reveal">
+          <div class="hero-label">
+            <i class="ti ti-device-mobile"></i>
+            iOS приложение
+          </div>
+          <h1>Ставь цели.<br><span class="accent">Доказывай</span><br>делом.</h1>
+          <p class="hero-sub">Создавай задачи, подтверждай выполнение фото, а AI убедится, что всё по-честному.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#download">
+              <i class="ti ti-brand-apple"></i>
+              App Store
+            </a>
+            <a class="btn btn-ghost" href="#how">Как это работает</a>
+          </div>
         </div>
+
+        <div class="hero-visual reveal-right">
+          <div class="vis-glow"></div>
+          <div class="vis-card">
+            <img src="assets/icon.png" alt="The Challenge app icon" class="vis-icon" />
+            <div class="vis-streak">
+              <span class="streak-num">47</span>
+              <span class="streak-label">дней подряд</span>
+            </div>
+          </div>
+          <div class="vis-badge">
+            <i class="ti ti-circle-check-filled"></i>
+            AI проверено
+          </div>
+          <div class="vis-pill">Цель выполнена!</div>
+        </div>
+
       </div>
     </section>
 
+    <!-- ── FEATURES BENTO ── -->
     <section class="features" id="features">
       <div class="wrap">
-        <h2 class="section-title">Всё для того, чтобы держать слово</h2>
-        <p class="section-sub">Простой набор инструментов, который превращает разовые «хочу начать» в стабильный прогресс.</p>
-        <div class="grid">
-          <div class="card">
-            <span class="emoji">🎯</span>
-            <h3>Личные цели</h3>
-            <p>Создавай задачи под себя — спорт, учёба, привычки — с понятным графиком выполнения.</p>
-          </div>
-          <div class="card">
-            <span class="emoji">📸</span>
-            <h3>Фотопруф</h3>
-            <p>Подтверждай выполнение снимком — никаких самообманов и галочек «для галочки».</p>
-          </div>
-          <div class="card">
-            <span class="emoji">🤖</span>
+        <h2 class="section-title reveal">Всё для того, чтобы держать слово</h2>
+        <p class="section-sub reveal">Простой набор инструментов, превращающий намерения в привычки.</p>
+
+        <div class="bento">
+          <div class="bento-cell cell-ai reveal" style="--delay: 0s">
+            <div class="cell-icon"><i class="ti ti-robot"></i></div>
             <h3>Проверка AI</h3>
-            <p>Каждое фото проверяется AI на соответствие цели, чтобы прогресс был настоящим.</p>
+            <p>Каждое фото автоматически проверяется. AI убедится, что задача действительно выполнена.</p>
+            <div class="cell-deco"></div>
           </div>
-          <div class="card">
-            <span class="emoji">🔥</span>
+
+          <div class="bento-cell cell-photo reveal" style="--delay: 0.07s">
+            <div class="cell-icon"><i class="ti ti-camera"></i></div>
+            <h3>Фотопруф</h3>
+            <p>Подтверждай выполнение снимком. Никакого самообмана и пустых галочек.</p>
+          </div>
+
+          <div class="bento-cell cell-streak reveal" style="--delay: 0.14s">
+            <div class="cell-icon"><i class="ti ti-flame"></i></div>
             <h3>Стрики</h3>
-            <p>Считай дни подряд и не давай себе сорваться — мотивация, которая видна сразу.</p>
+            <p>Дни без пропусков</p>
+            <div class="streak-big" aria-hidden="true">47</div>
           </div>
-          <div class="card">
-            <span class="emoji">👨‍👩‍👧</span>
+
+          <div class="bento-cell cell-family reveal" style="--delay: 0.21s">
+            <div class="cell-icon"><i class="ti ti-users-group"></i></div>
             <h3>С близкими</h3>
-            <p>Объединяйтесь в семьи или группы и поддерживайте друг друга в достижении целей.</p>
+            <p>Объединяйтесь в семьи, поддерживайте друг друга.</p>
           </div>
-          <div class="card">
-            <span class="emoji">🔔</span>
+
+          <div class="bento-cell cell-goals reveal" style="--delay: 0.28s">
+            <div class="cell-icon"><i class="ti ti-target"></i></div>
+            <h3>Личные цели</h3>
+            <p>Задай цель, расписание и дедлайн. Приложение выстроит план.</p>
+          </div>
+
+          <div class="bento-cell cell-notif reveal" style="--delay: 0.35s">
+            <div class="cell-icon"><i class="ti ti-bell"></i></div>
             <h3>Напоминания</h3>
-            <p>Push-уведомления вовремя подскажут, что пора действовать — без лишнего шума.</p>
+            <p>Push-уведомления вовремя напомнят о задаче. Без лишнего шума.</p>
+            <div class="notif-mock" aria-hidden="true">
+              <i class="ti ti-bell-ringing"></i>
+              <span>Время выполнить «Бег 5 км»</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ── HOW IT WORKS ── -->
     <section class="how" id="how">
       <div class="wrap">
-        <h2 class="section-title">Как это работает</h2>
-        <p class="section-sub">Три шага от намерения до привычки.</p>
-        <div class="steps">
-          <div class="step">
-            <div class="num">1</div>
+        <h2 class="section-title reveal">Три шага к привычке</h2>
+
+        <div class="steps-track">
+          <div class="steps-line" aria-hidden="true"></div>
+
+          <div class="step reveal" style="--delay: 0s">
+            <div class="step-num">1</div>
             <h3>Создай цель</h3>
-            <p>Опиши, что хочешь делать и как часто — приложение само построит график.</p>
+            <p>Опиши, что хочешь делать и как часто. Приложение само построит график.</p>
           </div>
-          <div class="step">
-            <div class="num">2</div>
+
+          <div class="step reveal" style="--delay: 0.1s">
+            <div class="step-num">2</div>
             <h3>Сделай фото</h3>
-            <p>Когда выполнил задачу — сфотографируй результат прямо в приложении.</p>
+            <p>Когда выполнил задачу, сфотографируй результат прямо в приложении.</p>
           </div>
-          <div class="step">
-            <div class="num">3</div>
+
+          <div class="step reveal" style="--delay: 0.2s">
+            <div class="step-num">3</div>
             <h3>Получи подтверждение</h3>
-            <p>AI проверит фото, засчитает день и продлит твой стрик.</p>
+            <p>AI проверит фото, засчитает день и продлит стрик.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ── CTA BAND ── -->
     <section class="cta-band" id="download">
-      <div class="wrap">
-        <h2>Готов начать челлендж?</h2>
+      <div class="wrap cta-inner reveal">
+        <h2>Готов начать?</h2>
         <p>Скачай The Challenge и сделай первый шаг сегодня.</p>
-        <a class="btn btn-primary" href="https://apps.apple.com/" target="_blank" rel="noopener">Скачать в App Store</a>
+        <a class="btn btn-white" href="https://apps.apple.com/" target="_blank" rel="noopener">
+          <i class="ti ti-brand-apple"></i>
+          Скачать в App Store
+        </a>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="wrap footer-row">
-      <span>&copy; 2026 The Challenge</span>
-      <nav>
-        <a href="privacy.html">Политика конфиденциальности</a>
+      <a class="brand brand-sm" href="#top">
+        <img src="assets/icon.png" alt="The Challenge" />
+        The Challenge
+      </a>
+      <span class="footer-copy">&copy; 2026 The Challenge</span>
+      <nav class="footer-nav">
+        <a href="privacy.html">Конфиденциальность</a>
         <a href="mailto:berdongar@gmail.com">Связаться</a>
       </nav>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

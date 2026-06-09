@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Challenge — цели с доказательством</title>
+  <title>The Challenge | цели с доказательством</title>
   <meta name="description" content="Ставь цели, подтверждай выполнение фото, а AI убедится, что всё по-честному. iOS-приложение для тех, кто держит слово." />
   <link rel="icon" href="assets/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +26,7 @@
         <a href="support.html">Поддержка</a>
         <a href="privacy.html">Конфиденциальность</a>
       </nav>
-      <div style="display:flex;gap:12px;align-items:center">
+      <div class="nav-cta">
         <a class="btn btn-primary btn-sm" href="#download">
           <i class="ti ti-brand-apple"></i>
           Скачать
@@ -44,60 +44,62 @@
     <section class="hero" id="top">
       <div class="wrap hero-inner">
 
+        <div class="hero-badge reveal">
+          <b>AI</b>
+          <span>проверка фото прямо в приложении</span>
+        </div>
+
         <div class="hero-text reveal">
-          <div class="hero-label">
-            <i class="ti ti-device-mobile"></i>
-            iOS приложение
-          </div>
-          <h1>Ставь цели.<br><span class="accent">Доказывай</span><br>делом.</h1>
-          <p class="hero-sub">Создавай задачи, подтверждай выполнение фото, а AI убедится, что всё по-честному.</p>
+          <h1>Ставь цели,<br><span class="accent">доказывай</span> делом.</h1>
+          <p class="hero-sub">Создавай задачи, подтверждай выполнение фото, а AI спокойно проверит, что всё по-честному.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#download">
+            <a class="btn btn-white" href="#download">
               <i class="ti ti-brand-apple"></i>
-              App Store
+              Скачать
             </a>
-            <a class="btn btn-ghost" href="features.html">Все возможности</a>
+            <a class="btn btn-outline-white" href="features.html">Все возможности</a>
           </div>
         </div>
 
-        <div class="hero-visual reveal-r">
-          <div class="vis-orb"></div>
-
-          <div class="vis-main">
-            <div class="vis-header">
-              <img src="assets/icon.png" alt="" class="vis-app-icon" />
-              <div>
-                <span class="vis-app-name">The Challenge</span>
-                <span class="vis-app-sub">Сегодня 3 задачи</span>
-              </div>
+        <div class="hero-visual reveal">
+          <div class="vis-frame">
+            <div class="device">
+              <img src="assets/screens/today.png" alt="Экран приложения The Challenge со списком задач на сегодня" loading="eager" width="286" />
             </div>
-            <span class="vis-streak-n">47</span>
-            <span class="vis-streak-l">дней подряд</span>
-            <div class="vis-bar-track">
-              <div class="vis-bar-fill"></div>
+            <div class="vis-streak-card" aria-hidden="true">
+              <span class="vis-sc-num">47</span>
+              <span class="vis-sc-lbl">дней<br>подряд</span>
             </div>
-            <div class="vis-bar-label">2 из 3 задач выполнено</div>
-          </div>
-
-          <div class="vis-ai-badge">
-            <i class="ti ti-circle-check-filled"></i>
-            AI проверено
-          </div>
-
-          <div class="vis-task-card">
-            <img src="https://picsum.photos/seed/morning-run-fitness/40/40" class="vis-task-img" alt="" loading="lazy" />
-            <div>
-              <span class="vis-task-title">Утренняя пробежка</span>
-              <span class="vis-task-check">
-                <i class="ti ti-circle-check-filled"></i>
-                Засчитано
-              </span>
+            <div class="vis-v2-badge" aria-hidden="true">
+              <i class="ti ti-circle-check-filled"></i>
+              Задача засчитана
             </div>
           </div>
-
-          <div class="vis-pill">Стрик не сломан!</div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ── FEATURE TICKER ── -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-chip"><i class="ti ti-sparkles"></i> AI-проверка фото</span>
+        <span class="ticker-chip"><i class="ti ti-camera"></i> Фотопруф</span>
+        <span class="ticker-chip"><i class="ti ti-flame"></i> Стрики</span>
+        <span class="ticker-chip"><i class="ti ti-target"></i> Личные цели</span>
+        <span class="ticker-chip"><i class="ti ti-users-group"></i> Семейные группы</span>
+        <span class="ticker-chip"><i class="ti ti-bell"></i> Умные напоминания</span>
+        <span class="ticker-chip"><i class="ti ti-calendar"></i> Гибкое расписание</span>
+        <span class="ticker-chip"><i class="ti ti-chart-line"></i> История прогресса</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-chip"><i class="ti ti-sparkles"></i> AI-проверка фото</span>
+        <span class="ticker-chip"><i class="ti ti-camera"></i> Фотопруф</span>
+        <span class="ticker-chip"><i class="ti ti-flame"></i> Стрики</span>
+        <span class="ticker-chip"><i class="ti ti-target"></i> Личные цели</span>
+        <span class="ticker-chip"><i class="ti ti-users-group"></i> Семейные группы</span>
+        <span class="ticker-chip"><i class="ti ti-bell"></i> Умные напоминания</span>
+        <span class="ticker-chip"><i class="ti ti-calendar"></i> Гибкое расписание</span>
+        <span class="ticker-chip"><i class="ti ti-chart-line"></i> История прогресса</span>
       </div>
     </section>
 
@@ -108,36 +110,40 @@
         <div class="spotlight-text reveal">
           <div class="spot-tag">
             <i class="ti ti-sparkles"></i>
-            Уникальная технология
+            AI-проверка
           </div>
           <h2>AI, который честнее <em>вас самих</em></h2>
-          <p>Большинство трекеров принимают любые данные. The Challenge отправляет каждое фото на проверку Claude API — и засчитывает только то, что действительно выполнено.</p>
-          <a class="spot-link" href="features.html">
-            Как работает проверка
-            <i class="ti ti-arrow-right"></i>
-          </a>
+          <p>Большинство трекеров верят на слово. The Challenge отправляет каждое фото на проверку Claude и засчитывает только то, что действительно выполнено.</p>
+
+          <div class="spotlight-steps">
+            <div class="spotlight-step">
+              <div class="s-icon"><i class="ti ti-camera"></i></div>
+              <div class="s-body">
+                <strong>Фотографируешь результат</strong>
+                <span>Снимок прямо в приложении, без сторонних галерей</span>
+              </div>
+            </div>
+            <div class="spotlight-step">
+              <div class="s-icon"><i class="ti ti-sparkles"></i></div>
+              <div class="s-body">
+                <strong>Claude анализирует фото</strong>
+                <span>Модель сверяет снимок с описанием задачи</span>
+              </div>
+            </div>
+            <div class="spotlight-step">
+              <div class="s-icon green"><i class="ti ti-circle-check"></i></div>
+              <div class="s-body">
+                <strong>Задача засчитывается сама</strong>
+                <span>Стрик растёт только на реальном доказательстве</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="spotlight-steps reveal-r">
-          <div class="spotlight-step">
-            <div class="s-icon"><i class="ti ti-camera"></i></div>
-            <div class="s-body">
-              <strong>Фотографируешь результат</strong>
-              <span>Снимок прямо в приложении — без сторонних галерей</span>
-            </div>
-          </div>
-          <div class="spotlight-step">
-            <div class="s-icon"><i class="ti ti-robot"></i></div>
-            <div class="s-body">
-              <strong>Claude API анализирует фото</strong>
-              <span>Модель проверяет, соответствует ли снимок описанию задачи</span>
-            </div>
-          </div>
-          <div class="spotlight-step">
-            <div class="s-icon green"><i class="ti ti-circle-check"></i></div>
-            <div class="s-body">
-              <strong>Задача засчитывается автоматически</strong>
-              <span>Стрик продолжается только при реальном доказательстве</span>
+        <div class="spotlight-device reveal-r">
+          <div class="vis-frame">
+            <div class="device">
+              <img src="assets/screens/ai_planner.png" alt="Экран AI-планировщика приложения" loading="lazy" width="260" />
             </div>
           </div>
         </div>
@@ -155,15 +161,15 @@
 
         <div class="bento">
           <div class="bento-cell cell-ai reveal" style="--delay:.0s">
-            <div class="cell-icon"><i class="ti ti-robot"></i></div>
+            <div class="cell-icon"><i class="ti ti-sparkles"></i></div>
             <h3>Проверка AI</h3>
-            <p>Каждое фото автоматически проверяется. AI убедится, что задача выполнена по-честному.</p>
+            <p>Каждое фото проверяет Claude и убеждается, что задача выполнена по-честному.</p>
             <div class="cell-deco"></div>
           </div>
           <div class="bento-cell cell-photo reveal" style="--delay:.06s">
             <div class="cell-icon"><i class="ti ti-camera"></i></div>
             <h3>Фотопруф</h3>
-            <p>Подтверждай выполнение снимком. Никакого самообмана и пустых галочек.</p>
+            <img class="cell-photo-img" src="assets/screens/list_detail.png" alt="Список задач в приложении" loading="lazy" width="230" />
           </div>
           <div class="bento-cell cell-streak reveal" style="--delay:.12s">
             <div class="cell-icon"><i class="ti ti-flame"></i></div>
@@ -201,20 +207,19 @@
           <h2 class="sec-title">Три шага к привычке</h2>
           <p class="sec-sub">От первой цели до уверенной привычки.</p>
         </div>
-        <div class="steps-track">
-          <div class="steps-line" aria-hidden="true"></div>
-          <div class="step reveal" style="--delay:.0s">
-            <div class="step-num">1</div>
+        <div class="how-steps reveal">
+          <div class="how-step">
+            <div class="how-step-n">1</div>
             <h3>Создай цель</h3>
             <p>Опиши задачу и выбери расписание. Приложение само выстроит план.</p>
           </div>
-          <div class="step reveal" style="--delay:.1s">
-            <div class="step-num">2</div>
+          <div class="how-step">
+            <div class="how-step-n">2</div>
             <h3>Сделай фото</h3>
-            <p>Когда выполнил задачу, сфотографируй результат прямо в приложении.</p>
+            <p>Выполнил задачу, сфотографировал результат прямо в приложении.</p>
           </div>
-          <div class="step reveal" style="--delay:.2s">
-            <div class="step-num">3</div>
+          <div class="how-step">
+            <div class="how-step-n">3</div>
             <h3>Получи подтверждение</h3>
             <p>AI проверит фото, засчитает день и продлит стрик.</p>
           </div>

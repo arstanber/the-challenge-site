@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Возможности — The Challenge</title>
+  <title>Возможности | The Challenge</title>
   <meta name="description" content="AI-верификация, фотопруф, стрики, семейные группы и напоминания. Всё, что нужно для настоящих привычек." />
   <link rel="icon" href="assets/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,7 +26,7 @@
         <a href="support.html">Поддержка</a>
         <a href="privacy.html">Конфиденциальность</a>
       </nav>
-      <div style="display:flex;gap:12px;align-items:center">
+      <div class="nav-cta">
         <a class="btn btn-primary btn-sm" href="index.html#download">
           <i class="ti ti-brand-apple"></i>
           Скачать
@@ -45,7 +45,7 @@
       <div class="wrap reveal">
         <div class="page-hero-tag"><i class="ti ti-sparkles"></i> Возможности</div>
         <h1>Инструменты для тех,<br>кто держит слово</h1>
-        <p>Каждая функция создана с одной целью — помочь вам дойти до результата, а не просто отметить галочку.</p>
+        <p>Каждая функция создана с одной целью, помочь вам дойти до результата, а не просто отметить галочку.</p>
       </div>
     </div>
 
@@ -64,8 +64,8 @@
           </ul>
         </div>
         <div class="feat-visual">
-          <div class="feat-img">
-            <img src="https://picsum.photos/seed/goal-planning-notebook/520/340" alt="Постановка целей" loading="lazy" />
+          <div class="device">
+            <img src="assets/screens/today.png" alt="Список задач на сегодня в приложении" loading="lazy" width="280" />
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@
         <div class="feat-text">
           <div class="feat-tag"><i class="ti ti-camera"></i> Фотопруф</div>
           <h2>Никакого самообмана</h2>
-          <p>Подтверждай каждое выполнение снимком прямо в приложении. Фото хранится в истории задачи — ты всегда можешь вернуться и посмотреть, как рос прогресс.</p>
+          <p>Подтверждай каждое выполнение снимком прямо в приложении. Фото хранится в истории задачи, ты всегда можешь вернуться и посмотреть, как рос прогресс.</p>
           <ul class="feat-bullets">
             <li><i class="ti ti-check"></i> Съёмка прямо из приложения</li>
             <li><i class="ti ti-check"></i> История фотоотчётов</li>
@@ -85,8 +85,8 @@
           </ul>
         </div>
         <div class="feat-visual">
-          <div class="feat-img">
-            <img src="https://picsum.photos/seed/smartphone-photo-proof/520/340" alt="Фотопруф" loading="lazy" />
+          <div class="shot-card">
+            <img src="assets/screens/list_detail.png" alt="Задачи с отметками выполнения" loading="lazy" width="320" />
           </div>
         </div>
       </div>
@@ -96,9 +96,9 @@
     <section class="ai-spotlight" style="margin-bottom:0">
       <div class="wrap spotlight-inner">
         <div class="spotlight-text reveal">
-          <div class="spot-tag"><i class="ti ti-robot"></i> AI-верификация</div>
+          <div class="spot-tag"><i class="ti ti-sparkles"></i> AI-верификация</div>
           <h2>Claude API видит сквозь <em>отговорки</em></h2>
-          <p>Мы используем Claude API от Anthropic. Модель анализирует содержимое фото и проверяет, соответствует ли снимок описанию задачи. Никакой ручной проверки — всё автоматически за секунды.</p>
+          <p>Мы используем Claude API от Anthropic. Модель анализирует содержимое фото и проверяет, соответствует ли снимок описанию задачи. Никакой ручной проверки, всё автоматически за секунды.</p>
           <a class="spot-link" href="support.html#faq-ai">
             Часто задаваемые вопросы про AI
             <i class="ti ti-arrow-right"></i>
@@ -114,9 +114,9 @@
               </div>
             </div>
             <div class="vf-step">
-              <div class="vf-icon"><i class="ti ti-robot"></i></div>
+              <div class="vf-icon"><i class="ti ti-sparkles"></i></div>
               <div class="vf-body">
-                <strong>Claude API анализирует</strong>
+                <strong>Claude анализирует</strong>
                 <span>Сравниваем содержимое с описанием задачи</span>
               </div>
             </div>
@@ -138,7 +138,7 @@
         <div class="feat-text">
           <div class="feat-tag"><i class="ti ti-flame"></i> Стрики</div>
           <h2>Мотивация, которая видна в цифрах</h2>
-          <p>Каждый день без пропуска добавляется к стрику. Чем длиннее цепочка — тем сильнее желание её не прервать. Это простая, но работающая механика.</p>
+          <p>Каждый день без пропуска добавляется к стрику. Чем длиннее цепочка, тем сильнее желание её не прервать. Это простая, но работающая механика.</p>
           <ul class="feat-bullets">
             <li><i class="ti ti-check"></i> Счётчик дней подряд</li>
             <li><i class="ti ti-check"></i> Визуальный календарь-карта прогресса</li>
@@ -223,7 +223,7 @@
         <div class="feat-text">
           <div class="feat-tag"><i class="ti ti-bell"></i> Напоминания</div>
           <h2>В нужный момент, без лишнего шума</h2>
-          <p>Push-уведомления настраиваются для каждой задачи отдельно. Приложение напомнит именно тогда, когда вы обычно готовы к выполнению — не раньше и не позже.</p>
+          <p>Push-уведомления настраиваются для каждой задачи отдельно. Приложение напомнит именно тогда, когда вы обычно готовы к выполнению, не раньше и не позже.</p>
           <ul class="feat-bullets">
             <li><i class="ti ti-check"></i> Время уведомления под каждую цель</li>
             <li><i class="ti ti-check"></i> Предупреждение если стрик под угрозой</li>
@@ -252,7 +252,7 @@
               <div class="nb-icon" style="background:#059669"><i class="ti ti-circle-check"></i></div>
               <div style="flex:1">
                 <div class="nb-title">Мария выполнила цель</div>
-                <div class="nb-body">«Медитация 10 минут» — засчитано</div>
+                <div class="nb-body">«Медитация 10 минут», засчитано</div>
               </div>
               <div class="nb-time">08:34</div>
             </div>

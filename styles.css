@@ -930,3 +930,193 @@ footer { border-top: 1px solid var(--border); padding: 48px 0 32px; }
 @media (max-width: 480px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+
+/* ============================================================
+   TICKER SECTION  (double row on home)
+   ============================================================ */
+.ticker-section { display: flex; flex-direction: column; gap: 12px; margin-bottom: 56px; }
+.ticker-track.rev { animation-direction: reverse; }
+
+
+/* ============================================================
+   FEATURES INTRO  (home — centered heading before deep-dives)
+   ============================================================ */
+.feat-intro { text-align: center; padding: var(--sp) 0 64px; }
+.fi-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .03em;
+  color: var(--brand); background: var(--brand-light);
+  border: 1px solid var(--border);
+  padding: 6px 14px; border-radius: 999px; margin-bottom: 24px;
+}
+.feat-intro h2 {
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 800; letter-spacing: -.035em; line-height: 1.06;
+  max-width: 20ch; margin: 0 auto 20px;
+}
+.feat-intro h2 em { font-style: italic; color: var(--brand); }
+.feat-intro > .wrap > p {
+  font-size: 18px; color: var(--ink-2); max-width: 50ch;
+  line-height: 1.65; margin: 0 auto;
+}
+
+
+/* ============================================================
+   STATS BAND  (dark card with violet glow)
+   ============================================================ */
+.stats-band {
+  background: var(--bg-dark);
+  border-radius: var(--radius-lg);
+  margin: 0 24px var(--sp);
+  position: relative; overflow: hidden;
+}
+.stats-band::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(55% 70% at 15%  0%,  rgba(139,92,246,.22), transparent 55%),
+    radial-gradient(40% 55% at 85% 100%, rgba(0,72,226,.14),   transparent 55%);
+}
+.stats-divider {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+}
+.stat-item {
+  padding: 64px 36px; text-align: center;
+  border-right: 1px solid rgba(255,255,255,.09);
+}
+.stat-item:last-child { border-right: none; }
+.stat-n {
+  display: block;
+  font-size: clamp(52px, 6vw, 76px); font-weight: 800;
+  letter-spacing: -.04em; line-height: 1;
+  color: #fff; margin-bottom: 12px;
+}
+.stat-n .av { color: var(--brand-bright); }
+.stat-n .ab { color: #6f8cff; }
+.stat-l {
+  font-size: 15px; color: rgba(255,255,255,.45); font-weight: 500;
+  line-height: 1.45; max-width: 20ch; margin: 0 auto;
+}
+
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials { padding: var(--sp) 0; }
+.testi-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.testi-card {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 30px;
+  display: flex; flex-direction: column;
+  transition: transform .22s var(--ease-out), box-shadow .22s;
+}
+.testi-card:hover { transform: translateY(-3px); box-shadow: 0 20px 52px rgba(13,15,20,.08); }
+.testi-stars { display: flex; gap: 4px; color: #f59e0b; font-size: 15px; margin-bottom: 14px; }
+.testi-quote {
+  font-size: 15px; color: var(--ink-2); line-height: 1.7; flex: 1; margin-bottom: 22px;
+}
+.testi-quote strong { color: var(--ink); }
+.testi-author {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 16px; border-top: 1px solid var(--border);
+}
+.testi-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: var(--brand); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 700;
+}
+.testi-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.testi-role { font-size: 12px; color: var(--muted); }
+
+
+/* ============================================================
+   FAQ HOME  (sticky sidebar + accordion)
+   ============================================================ */
+.faq-home {
+  padding: var(--sp) 0;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.faq-home-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+.faq-home-lhs { position: sticky; top: 100px; }
+.faq-home-lhs .spot-tag { margin-bottom: 18px; }
+.faq-home-lhs h2 {
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 800; letter-spacing: -.025em; line-height: 1.1;
+  margin-bottom: 14px;
+}
+.faq-home-lhs > p {
+  font-size: 16px; color: var(--ink-2); line-height: 1.65;
+  margin-bottom: 28px; max-width: 32ch;
+}
+
+
+/* ============================================================
+   DOWNLOAD SECTION  (QR + CTAs, replaces CTA band)
+   ============================================================ */
+.download-section { padding: var(--sp) 0 100px; }
+.dl-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.dl-text h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800; letter-spacing: -.025em; line-height: 1.1;
+  margin-bottom: 16px;
+}
+.dl-text p {
+  font-size: 17px; color: var(--ink-2); line-height: 1.65;
+  margin-bottom: 36px; max-width: 40ch;
+}
+.dl-cta-btns { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.dl-qr-card {
+  background: #fff; border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg); padding: 40px 36px;
+  text-align: center;
+  box-shadow: 0 24px 64px -28px rgba(40,28,90,.18);
+}
+.dl-qr-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -.015em; margin-bottom: 6px; }
+.dl-qr-card > p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+.qr-mock {
+  width: 160px; height: 160px; margin: 0 auto 20px;
+  background: var(--page); border-radius: 14px;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+}
+.qr-mock i { font-size: 52px; color: var(--ink); opacity: .18; }
+.dl-store-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.badge-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--ink); color: #fff; border-radius: 10px;
+  padding: 10px 18px; font-size: 13px; font-weight: 600;
+  transition: transform .15s, background .15s;
+}
+.badge-pill:hover { transform: translateY(-1px); background: #2a2733; }
+.badge-pill .ti { font-size: 17px; }
+
+
+/* ============================================================
+   RESPONSIVE — new sections
+   ============================================================ */
+@media (max-width: 1024px) {
+  .stats-band { margin: 0 16px var(--sp); }
+}
+
+@media (max-width: 900px) {
+  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-divider { grid-template-columns: 1fr; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.09); padding: 40px 24px; }
+  .stat-item:last-child { border-bottom: none; }
+  .faq-home-inner { grid-template-columns: 1fr; gap: 40px; }
+  .faq-home-lhs { position: static; }
+  .dl-inner { grid-template-columns: 1fr; gap: 48px; }
+  .dl-cta-btns { flex-direction: row; flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+  .testi-grid { grid-template-columns: 1fr; }
+  .feat-intro h2 { max-width: none; }
+  .dl-qr-card { padding: 28px 20px; }
+}

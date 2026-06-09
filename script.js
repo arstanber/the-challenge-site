@@ -106,10 +106,13 @@
       const data = tabData[key];
       if (!data) return;
 
-      if (panel)  panel.style.background = data.bg;
-      if (textEl) textEl.textContent = data.text;
-      if (numEl)  numEl.textContent  = data.num;
-      if (lblEl)  lblEl.textContent  = data.lbl;
+      [textEl, numEl, lblEl].forEach(el => el && el.classList.add('ucp-fading'));
+      setTimeout(() => {
+        if (panel)  panel.style.background = data.bg;
+        if (textEl) { textEl.textContent = data.text; textEl.classList.remove('ucp-fading'); }
+        if (numEl)  { numEl.textContent  = data.num;  numEl.classList.remove('ucp-fading'); }
+        if (lblEl)  { lblEl.textContent  = data.lbl;  lblEl.classList.remove('ucp-fading'); }
+      }, 230);
     });
   });
 })();
@@ -131,3 +134,123 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.reveal, .reveal-r').forEach((el) => el.classList.add('on'));
 }
+
+/* ── 7. HERO PARALLAX ── */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const hero = document.querySelector('.hero');
+  const lc   = document.querySelector('.hv-left-card');
+  const rc   = document.querySelector('.hv-right-card');
+  if (!hero || !lc || !rc) return;
+  hero.addEventListener('mousemove', (e) => {
+    const r = hero.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width  - 0.5) * 22;
+    const y = ((e.clientY - r.top)  / r.height - 0.5) * 12;
+    lc.style.translate = `${-x * 0.7}px ${-y * 0.4}px`;
+    rc.style.translate = `${x  * 0.7}px ${y  * 0.4}px`;
+  });
+  hero.addEventListener('mouseleave', () => {
+    lc.style.translate = rc.style.translate = '';
+  });
+})();
+
+/* ── 8. COUNT-UP ANIMATION ── */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function animateCount(el, duration) {
+    const suffixEl   = el.querySelector('span');
+    const suffixHTML = suffixEl ? suffixEl.outerHTML : '';
+    const textNode   = Array.from(el.childNodes).find(n => n.nodeType === 3);
+    const rawText    = (textNode ? textNode.textContent : el.textContent).trim();
+    const m = rawText.match(/^([\d\s ]+)(.*)/);
+    if (!m) return;
+    const target  = parseInt(m[1].replace(/\D/g, ''), 10);
+    const postfix = m[2];
+    if (!target) return;
+
+    const start = performance.now();
+    (function frame(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const v = Math.round(target * easeOutQuart(p));
+      const fmt = v >= 1000
+        ? Math.floor(v / 1000) + ' ' + String(v % 1000).padStart(3, '0')
+        : String(v);
+      el.innerHTML = fmt + postfix + suffixHTML;
+      if (p < 1) requestAnimationFrame(frame);
+    })(start);
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      obs.unobserve(entry.target);
+      animateCount(entry.target, 1600);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.cs-num, .cs-snum').forEach(el => obs.observe(el));
+})();
+
+/* ── 9. MARQUEE TAGLINE ── */
+(function () {
+  const row = document.querySelector('.uc-tagline-row');
+  if (!row) return;
+  const items = Array.from(row.children);
+  if (!items.length) return;
+  const track = document.createElement('div');
+  track.className = 'uc-tagline-track';
+  items.forEach(item => track.appendChild(item));
+  items.forEach(item => track.appendChild(item.cloneNode(true)));
+  row.appendChild(track);
+  track.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+  track.addEventListener('mouseleave', () => { track.style.animationPlayState = ''; });
+})();
+
+/* ── 10. CARD 3D TILT ── */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.ss-card, .rv-vid, .rv-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const r  = card.getBoundingClientRect();
+      const cx = (e.clientX - r.left) / r.width  - 0.5;
+      const cy = (e.clientY - r.top)  / r.height - 0.5;
+      card.style.transform = `perspective(700px) rotateY(${cx * 9}deg) rotateX(${-cy * 9}deg) translateZ(6px)`;
+    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
+})();
+
+/* ── 11. STREAK BAR ANIMATE ── */
+(function () {
+  const fill = document.querySelector('.sw-fill');
+  if (!fill) return;
+  const styleAttr = fill.getAttribute('style') || '';
+  const m = styleAttr.match(/width:\s*([^;]+)/);
+  const target = m ? m[1].trim() : '72%';
+  fill.style.cssText = 'width:0;transition:none';
+  const widget = fill.closest('.streak-widget');
+  if (!widget) return;
+  new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    requestAnimationFrame(() => {
+      fill.style.transition = 'width 1.4s cubic-bezier(0.16,1,0.3,1) 0.25s';
+      fill.style.width = target;
+    });
+  }, { threshold: 0.6 }).observe(widget);
+})();
+
+/* ── 12. SCROLL PROGRESS BAR ── */
+(function () {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  function update() {
+    const scrolled = document.documentElement.scrollTop;
+    const total    = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();

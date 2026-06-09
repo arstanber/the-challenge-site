@@ -262,6 +262,13 @@ ul { list-style: none; }
     radial-gradient(ellipse 55% 65% at 22% 55%, rgba(100,45,18,.5), transparent 60%),
     radial-gradient(ellipse 40% 50% at 72% 40%, rgba(60,28,12,.3), transparent 60%);
 }
+.hero::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.04; mix-blend-mode: overlay;
+}
 .hero-wrap {
   position: relative; z-index: 1;
   width: 100%; max-width: 1240px; margin: 0 auto; padding: 140px 40px 80px;
@@ -280,6 +287,7 @@ ul { list-style: none; }
   background: var(--orange); color: var(--white);
   border-radius: 100px; padding: 3px 12px;
   font-size: 12px; font-weight: 700;
+  animation: badgePulse 2.8s ease-in-out infinite;
 }
 
 .hero h1 {
@@ -327,6 +335,8 @@ ul { list-style: none; }
   display: flex; flex-direction: column; gap: 10px;
   animation-delay: .9s;
 }
+/* CSS translate property is independent of animation's transform — safe to combine */
+.hv-left-card, .hv-right-card { transition: translate 0.12s ease-out; }
 .hvc-icon {
   width: 44px; height: 44px; border-radius: 50%;
   background: linear-gradient(135deg, #FF8C38, #FF4C00);
@@ -350,6 +360,22 @@ ul { list-style: none; }
 @keyframes floatY {
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-10px); }
+}
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,76,0,.45); }
+  50%       { box-shadow: 0 0 0 9px rgba(255,76,0,0); }
+}
+@keyframes numGlow {
+  0%, 100% { text-shadow: 0 10px 20px rgba(255,76,0,.4); }
+  50%       { text-shadow: 0 10px 40px rgba(255,76,0,.75), 0 0 80px rgba(255,76,0,.2); }
+}
+@keyframes playPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,.3); }
+  50%       { box-shadow: 0 0 0 14px rgba(255,255,255,0); }
+}
+@keyframes marqueeSlide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .hero-fade {
@@ -619,10 +645,19 @@ ul { list-style: none; }
   color: var(--white); line-height: 1;
 }
 .ucp-lbl { font-size: 15px; color: rgba(255,255,255,.6); }
+.ucp-text, .ucp-num, .ucp-lbl { transition: opacity 0.22s ease; }
+.ucp-fading { opacity: 0 !important; }
 
 .uc-tagline-row {
-  display: flex; gap: 10px; flex-wrap: wrap;
+  display: block; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
+.uc-tagline-track {
+  display: flex; gap: 10px; width: max-content;
+  animation: marqueeSlide 34s linear infinite;
+}
+.uc-tagline-track:hover { animation-play-state: paused; }
 .uc-tinytag {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 14px; color: var(--charcoal);
@@ -702,6 +737,7 @@ ul { list-style: none; }
   font-size: clamp(72px, 12vw, 130px); font-weight: 500;
   color: var(--orange); line-height: 1;
   text-shadow: 0 10px 20px rgba(255,76,0,.4);
+  animation: numGlow 3.5s ease-in-out infinite;
 }
 .cs-num-tag {
   position: absolute; top: 18px; right: -190px;
@@ -802,6 +838,8 @@ ul { list-style: none; }
   border: 2px solid rgba(255,255,255,.4);
   display: flex; align-items: center; justify-content: center;
   color: var(--white); font-size: 20px;
+  animation: playPulse 2.2s ease-in-out infinite;
+  cursor: pointer;
 }
 
 /* Review cards masonry */
@@ -1176,6 +1214,15 @@ footer { background: var(--bg-light); }
   padding: 6px 13px; border-radius: 100px; margin-bottom: 22px;
 }
 
+
+/* ── Scroll progress bar ── */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--orange), #ff7a30);
+  pointer-events: none;
+  transition: width 0.06s linear;
+}
 
 /* ============================================================
    RESPONSIVE

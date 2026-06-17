@@ -1,5 +1,5 @@
 /* ============================================================
-   The Challenge — Design System (Habitline-inspired)
+   reInspire — Design System (Habitline-inspired)
    ============================================================ */
 
 /* ── Fonts ── */
@@ -1087,6 +1087,50 @@ footer { background: var(--bg-light); }
    INNER PAGE STYLES (features.html, support.html, legal)
    ============================================================ */
 
+/* Subpage header / footer brand (features, support, privacy, terms)
+   These pages use .brand / .nav / .nav-links / .footer-grid, which the
+   redesigned styles.css never defined -- without the img size cap below
+   the 1024px logo rendered full-size and covered the whole page. */
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'Stack Sans Headline', sans-serif;
+  font-weight: 700; font-size: 20px; color: var(--dark);
+  white-space: nowrap; flex-shrink: 0;
+}
+.brand img { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; }
+
+/* Subpage top bar */
+.wrap.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; pointer-events: auto;
+  background: var(--white); border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 12px 20px;
+}
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a {
+  display: block; padding: 10px 18px; border-radius: 14px;
+  font-size: 15px; font-weight: 500; color: var(--charcoal);
+  white-space: nowrap; transition: background .15s, color .15s;
+}
+.nav-links a:hover  { background: var(--bg-light); color: var(--dark); }
+.nav-links a.active { background: var(--bg-light); color: var(--dark); }
+.nav-cta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+
+/* CTA button styles used only by the subpages */
+.btn-primary { background: var(--dark); color: var(--white); box-shadow: var(--shadow-btn); }
+.btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+.btn-sm { padding: 10px 20px; font-size: 15px; }
+
+/* Subpage footer */
+.footer-grid {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px; padding: 64px 0 40px; align-items: start;
+}
+.footer-brand .brand { margin-bottom: 16px; font-size: 24px; }
+.footer-brand .brand img { width: 34px; height: 34px; border-radius: 9px; }
+.footer-brand p { font-size: 15px; color: var(--charcoal); line-height: 1.6; max-width: 36ch; }
+
 /* Page hero */
 .page-hero {
   padding: 150px 0 64px;
@@ -1328,16 +1372,17 @@ body:hover #cursor-glow { opacity: 1; }
 }
 
 @media (max-width: 900px) {
-  .nav-pills { display: none; }
+  .nav-pills, .nav-links { display: none; }
   .menu-btn  { display: flex; }
-  .nav-pills.open {
+  .nav-pills.open, .nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 80px; left: 20px; right: 20px;
     background: var(--white); border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0,0,0,.15);
     padding: 12px; z-index: 300;
   }
-  .nav-pills.open a { padding: 14px 18px; border-radius: 14px; font-size: 16px; }
+  .nav-pills.open a, .nav-links.open a { padding: 14px 18px; border-radius: 14px; font-size: 16px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 
   .fa-mid        { grid-template-columns: 1fr; gap: 40px; }
   .fa-bottom     { grid-template-columns: 1fr; }
@@ -1399,5 +1444,6 @@ body:hover #cursor-glow { opacity: 1; }
   .uc-tabs  { gap: 6px; }
   .uc-tab   { font-size: 13px; padding: 10px 16px; }
   .footer-cols { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .cs-snum  { font-size: 52px; }
 }
